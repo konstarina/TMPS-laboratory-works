@@ -48,11 +48,11 @@ class ChocolateFactory:
     @staticmethod
     def get_chocolate(chocotype):
         try:
-            if chocotype == "HotIceCream":
+            if chocotype == "DarkChocolate":
                 return DarkChocolate()
-            if chocotype == "WonkaBar":
+            if chocotype == "MilkChocolate":
                 return MilkChocolate()
-            if chocotype == "ThreeCourseDinnerGum":
+            if chocotype == "WhiteChocolate":
                 return WhiteChocolate()
             raise AssertionError("Chocolate is not found")
         except AssertionError as _e:
@@ -60,9 +60,9 @@ class ChocolateFactory:
 
 
 if __name__ == "__main__":
-    CHOCO = ChocolateFactory.get_chocolate("HotIceCream")
+    CHOCO = ChocolateFactory.get_chocolate("DarkChocolate")
     print("Dark Chocolate contains", CHOCO.get_information())
-    CHOCO = ChocolateFactory.get_chocolate("WonkaBar")
+    CHOCO = ChocolateFactory.get_chocolate("MilkChocolate")
     print("Milk Chocolate contains", CHOCO.get_information())
-    CHOCO = ChocolateFactory.get_chocolate("ThreeCourseDinnerGum")
+    CHOCO = ChocolateFactory.get_chocolate("WhiteChocolate")
     print("White Chocolate contains", CHOCO.get_information())
