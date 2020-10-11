@@ -64,3 +64,42 @@ The Factory Pattern is a creational pattern that defines an Interface for creati
 ```
 
 #### Abstract Factory
+The Abstract Factory Pattern is a creational pattern that adds an abstract layer over multiple factory method implementations. The Abstract Factory pattern differs from the Factory Pattern in that it returns Factories, rather than objects of concrete class.
+```python
+# Asking for a 'MilkChocolate' will pass the request to the 'ChocolateFactory'
+    CHOCOLATE = ChocolateFactory.get_chocolate("MilkChocolate")
+    print(f"{CHOCOLATE.__class__} : {CHOCOLATE.get_information()}")
+# Asking for a 'ThreeCourseDinnerGum' will pass the request to the 'WonkaFactory'
+    CHOCOLATE = ChocolateFactory.get_chocolate("ThreeCourseDinnerGum")
+    print(f"{CHOCOLATE.__class__} : {CHOCOLATE.get_information()}")
+```
+Importing the factories:
+```puthon 
+from abc import ABCMeta
+from chocolate_factory import ChocolateFactory
+from wonka_factory import WonkaFactory
+```
+Creating th interface:
+```
+class ISweetsFactory(metaclass=ABCMeta):
+
+    @staticmethod
+    def get_sweets(sweets_type):
+        """The static sweets factory interface method"""
+```
+Create the Abstract Factory Class and Method:
+```
+class SweetsFactory(ISweetsFactory):
+
+    @staticmethod
+    def get_sweets(sweets_type):
+        try:
+            if sweets_type in ["DarkChocolate", "MilkChocolate", "WhiteChocolate"]:
+                return ChocolateFactory.get_chocolate(sweets_type)
+            if sweets_type in ["HotIceCream", "WonkaBar", "ThreeCourseDinnerGum"]:
+                return WonkaFactory.get_chocolate(sweets_type)
+            raise AssertionError("Cannot find sweets type")
+        except AssertionError as _e:
+            print(_e)
+        return None
+ ```
