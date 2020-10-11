@@ -55,11 +55,11 @@ Here I have a director returning different types oof factories :
 The Factory Pattern is a creational pattern that defines an Interface for creating an object and defers instantiation until runtime. The chocolate_factory.py python file, will call the ChocolateFactory method get_chocolate(chocolate), and the ChocolateFactory will return it an object of which ever type of chocolate was requested. The client application can then use the new chocolate object how ever it desires and it’s interface allows.
 
 ```python
-    CHOCO = ChocolateFactory.get_chocolate("HotIceCream")
+    CHOCO = ChocolateFactory.get_chocolate("DarkChocolate")
     print("Dark Chocolate contains", CHOCO.get_information())
-    CHOCO = ChocolateFactory.get_chocolate("WonkaBar")
+    CHOCO = ChocolateFactory.get_chocolate("MilkChocolate")
     print("Milk Chocolate contains", CHOCO.get_information())
-    CHOCO = ChocolateFactory.get_chocolate("ThreeCourseDinnerGum")
+    CHOCO = ChocolateFactory.get_chocolate("WhiteChocolate")
     print("White Chocolate contains", CHOCO.get_information())
 ```
 
