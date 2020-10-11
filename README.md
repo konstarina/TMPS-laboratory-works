@@ -74,13 +74,13 @@ The Abstract Factory Pattern is a creational pattern that adds an abstract layer
     print(f"{CHOCOLATE.__class__} : {CHOCOLATE.get_information()}")
 ```
 Importing the factories:
-```puthon 
+```python 
 from abc import ABCMeta
 from chocolate_factory import ChocolateFactory
 from wonka_factory import WonkaFactory
 ```
 Creating th interface:
-```
+```python
 class ISweetsFactory(metaclass=ABCMeta):
 
     @staticmethod
@@ -88,7 +88,7 @@ class ISweetsFactory(metaclass=ABCMeta):
         """The static sweets factory interface method"""
 ```
 Create the Abstract Factory Class and Method:
-```
+```python
 class SweetsFactory(ISweetsFactory):
 
     @staticmethod
