@@ -11,12 +11,12 @@
 * Implement at least 3 CDPs for the specific domain;
 
 ## Creational Design Pattern:
- - [x] Adapter
- - [ ] Bridge
- - [ ] Composite
+ - [ ] Adapter
+ - [x] Bridge
+ - [x] Composite
  - [x] Decorator
  - [ ] Facade
- - [x] Proxy
+ - [ ] Proxy
 
 ## Implementation:
 #### Adapter
